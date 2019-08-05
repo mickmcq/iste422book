@@ -1,0 +1,42 @@
+\newcommand{\hattribute}[1]{{\color{hattrcolor}#1}}
+\newcommand{\hvalue}[1]{{\color{hvalcolor}#1}}
+\newcommand{\linklabel}[1]{{\color{linklabelcolor}#1}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\subt}[1]{{\footnotesize \color{subtitle} {#1}}}
+\newcommand{\remark}[1]{{\footnotesize \color{remarkcolor} {#1}}}
+\newcommand{\ig}[2]{\centerline{\includegraphics[keepaspectratio,#1]{#2}}}
+%\newcommand{\weekn}[1]{\noindent{\itshape\textbf{\color{emphcolor}#1}}}
+\newcommand{\weekn}[1]{\noindent{\itshape\textbf{\color{emphcolor}#1}}\par}
+\newcommand{\dayn}[1]{\noindent{\itshape\textbf{\color{emphcolor}#1}}\par}
+
+% following used for \CIRCLE only --- remove when I find
+% a better way to insert a big filled circle!
+\usepackage{wasysym}
+
+\usepackage[font=sc,labelsep=period,format=hang]{caption}
+% 2017-08-31 20:09 following was suggested at
+% https://github.com/jupyter/notebook/issues/466
+% as a remedy for undefined control sequence \ImportTok
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+
+%\usepackage[hyphens]{url}
+\def\UrlBigBreaks{\do\/\do-\do:}
+\expandafter\def\expandafter\UrlBreaks\expandafter{\UrlBreaks%  save the current one
+      \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j%
+      \do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t%
+      \do\u\do\v\do\w\do\x\do\y\do\z\do\A\do\B\do\C\do\D%
+      \do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N%
+      \do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X%
+      \do\Y\do\Z}
+
+% from
+% https://tex.stackexchange.com/questions/50804/explicit-space-character
+\newcommand\Vtextvisiblespace[1][.3em]{%
+  \mbox{\kern.06em\vrule height.3ex}%
+  \vbox{\hrule width#1}%
+  \hbox{\vrule height.3ex}}
+

@@ -1,0 +1,39 @@
+\usepackage{multicol}
+
+\newenvironment{btopiclist}{%
+  \begin{list}{$\bullet$}{\setlength\itemindent{0.00in}% 
+                 \setlength\listparindent{0.70in}%
+                 \setlength\leftmargin{0.65in}%
+                 \setlength\rightmargin{0.20in}%
+                 \setlength\labelsep{0.10in}%
+                 \setlength\labelwidth{1.5in}%
+                 \setlength\itemsep{-2.0pt}%
+	       \setlength\parsep{2pt}%
+  }}{\end{list}%
+}
+
+\newcounter{nlcounter}
+\newenvironment{nlist}{\begin{list}{%
+  \arabic{nlcounter}.}{%
+  \usecounter{nlcounter}%
+  \setlength\itemindent{0.00in}% 
+  \setlength\listparindent{0.70in}%
+  \setlength\leftmargin{0.65in}%
+  \setlength\rightmargin{0.20in}%
+  \setlength\labelsep{0.10in}%
+  \setlength\labelwidth{0.75in}%
+  \setlength\itemsep{-2.0pt}
+  \setlength\parsep{2pt}%
+}}{\end{list}}
+
+\newenvironment{wtopiclist}{%
+  \begin{list}{$\bullet$}{\setlength\itemindent{0.00in}% 
+                 \setlength\listparindent{0.45in}%
+                 \setlength\leftmargin{0.30in}%
+                 \setlength\rightmargin{0.20in}%
+                 \setlength\labelsep{0.10in}%
+                 \setlength\labelwidth{1.5in}%
+                 \setlength\itemsep{-2.0pt}%
+	       \setlength\parsep{2pt}%
+  }}{\end{list}%
+}

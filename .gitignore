@@ -1,0 +1,10 @@
+14packaging.pin
+book-content.md
+book.aux
+book.log
+book.out
+book.tex
+book.toc
+/cover
+makepin
+/oldBusiness

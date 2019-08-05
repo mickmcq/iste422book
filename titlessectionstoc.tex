@@ -1,0 +1,39 @@
+%\usepackage[inner=1.00in,outer=0.51in,top=0.5in,bottom=0.75in,paperheight=8.5in,paperwidth=5.5in,twoside]{geometry}
+\usepackage[height=7.0in,width=4.25in,paperheight=8.5in,paperwidth=5.5in]{geometry}
+%\usepackage[height=9.0in,width=6.5in,paperheight=11.0in,paperwidth=8.5in]{geometry}
+\usepackage{titlecaps} % allow custom capitalization of titles using \Addlcwords in the document
+
+% titlesec and titletoc
+\usepackage{titlesec}
+%\titleformat{cmnd    }[shape]{format             }{label}{sep}{before}[after]
+
+%\renewcommand{\thesection}{\Alph{section}}
+%\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{}
+\renewcommand{\thesubsubsection}{}
+\titleformat{\section}[block]
+  {\small\sffamily\fillast}
+  {} % no section number {\scshape \thesection}
+  {1ex minus 0.1ex}
+  {\MakeUppercase}
+\titlespacing*{\section}{3pc}{*3}{*2}[3pc]
+\titleformat{\subsection}[runin]
+               {\normalfont\bfseries}
+               {}{.0em}{}[. \quad ]
+             \titlespacing{\subsection}
+               {\parindent}{0.5ex plus .1ex minus .2ex}{0pt}
+
+\titleformat{\subsubsection}[runin]
+               {\normalfont\itshape}
+               {\ }{.2em}{}[. \quad ]
+             \titlespacing{\subsubsection}
+               {\parindent}{0.5ex plus .1ex minus .2ex}{0pt}
+
+\titleformat{\subsubsubsection}[runin]
+               {\normalfont\itshape}
+               {\ }{.2em}{}[. \quad ]
+             \titlespacing{\subsubsubsection}
+               {\parindent}{0.5ex plus .1ex minus .2ex}{0pt}
+
+\setcounter{tocdepth}{3}

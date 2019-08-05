@@ -1,0 +1,17 @@
+
+\begin{center}
+
+  \textsf{\MakeUppercase{$title$}}
+
+\smallskip
+
+\textsf{\MakeUppercase{$author$}}
+
+\smallskip
+
+\textsf{\MakeUppercase{$date$}}
+
+\end{center}
+
+$body$
+

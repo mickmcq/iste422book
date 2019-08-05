@@ -1,0 +1,22 @@
+% 2015-02-08 13:41 mjm
+% This file copies and extends language definitions from
+% the listings package, where the language definitions
+% are currently found in three files
+%   /usr/local/texlive/tex/latex/listings/lstlang[123].sty
+% This file represents a fourth file of the same type in
+% which to add keywords or other settings.
+%
+\lstdefinelanguage{Java}%
+  {morekeywords={abstract,boolean,break,byte,case,catch,char,class,%
+      const,continue,default,do,double,else,extends,false,final,%
+      finally,float,for,goto,if,implements,import,instanceof,int,%
+      interface,label,long,native,new,null,package,private,protected,%
+      public,return,short,static,String,super,switch,synchronized,this,throw,%
+      throws,transient,true,try,void,volatile,while},%
+   sensitive,%
+   morecomment=[l]//,%
+   morecomment=[s]{/*}{*/},%
+   morestring=[b]",%
+   morestring=[b]',%
+  }[keywords,comments,strings]%
+

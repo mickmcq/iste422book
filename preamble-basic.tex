@@ -1,0 +1,65 @@
+\documentclass[12pt]{article}
+
+%                                 titles, sections, toc,
+%                                 geometry
+\input{titlessectionstoc.tex}
+
+%                                 graphics
+\usepackage{graphicx}
+
+%                                 figures
+\input{figuresettings.tex}
+
+%                                 lists
+\input{listsettings.tex}
+
+%                                 colors
+\input{colorsettings}
+
+%                                 listings
+\input{listingssettings.tex}
+%                                 tikz pgf settings
+
+\input{tikzsettings.tex}
+
+%                                 tables
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{colortbl}
+
+%                                 fontsettings
+%\input{fontsettings.tex}
+%\input{fontsettings-baskf.tex}
+%\input{fontsettings-caslonpro.tex}
+%\input{fontsettings-erewhon.tex}
+\input{fontsettings-fbb.tex}
+%\input{fontsettings-fell.tex}
+
+%                                 misc
+\input{dbnotation.tex}
+\input{widths.tex}
+\input{miscsettings.tex}
+
+%                                 figures-only display
+\usepackage[floats,xetex,tightpage]{preview}
+\setlength\PreviewBorder{9pt}
+%                                 macro defined by
+%                                 pandoc
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+%                                 pandoc syntax
+%                                 highlighting
+\input{pandocSyntax}
+%                                 document
+
+
+\begin{document}
+\lstset{language=SQL,upquote=true}
+\newcommand{\qq}{\symbol{34}} % 34 is the decimal ascii code for "
+\LetLtxMacro{\OldIncludegraphics}{\includegraphics}
+\renewcommand{\includegraphics}[2][]{\OldIncludegraphics[%
+  height=6cm,%
+  #1]{#2}}
+\input{\jobname.tex}
+\end{document}

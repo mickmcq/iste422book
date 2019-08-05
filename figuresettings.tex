@@ -1,0 +1,62 @@
+\usepackage{mdframed}
+
+% define a pale background for figures
+\mdfdefinestyle{palestyle}{%
+  linewidth=2pt,%
+  backgroundcolor=red!4,%
+  linecolor=red!4%
+}
+
+% centered figure with a pale background
+\newenvironment{frcenter}{%
+  \begin{mdframed}[style=palestyle]%
+  \begin{center}
+}{%
+   \end{center}\end{mdframed}
+}
+
+% narrow itemized list with a pale background
+\newenvironment{topiclist}{%
+\begin{mdframed}[style=palestyle]%
+  \begin{list}{$\bullet$}{\setlength\itemindent{0.00in}% 
+                 \setlength\listparindent{0.90in}%
+                 \setlength\leftmargin{0.85in}%
+                 \setlength\labelsep{0.10in}%
+                 \setlength\labelwidth{1.5in}%
+                 \setlength\itemsep{-2.0pt}%
+	       \setlength\parsep{2pt}%
+  }}{\end{list}%
+\end{mdframed}}
+
+% wide numbered list with a pale background
+\newcounter{ncounter}
+\newenvironment{widenlist}{%
+  \begin{mdframed}[style=palestyle]%
+  \begin{list}{%
+    \arabic{ncounter}.}{%
+    \usecounter{ncounter}%
+    \setlength\itemindent{0.00in}% 
+    \setlength\listparindent{0.45in}%
+    \setlength\leftmargin{0.30in}%
+    \setlength\rightmargin{0.20in}%
+    \setlength\labelsep{0.10in}%
+    \setlength\labelwidth{0.75in}%
+    \setlength\itemsep{-2.0pt}
+    \setlength\parsep{2pt}%
+}}{%
+  \end{list}\end{mdframed}%
+}
+
+% wide itemized list with a pale background
+\newenvironment{widetopiclist}{%
+\begin{mdframed}[style=palestyle]%
+  \begin{list}{$\bullet$}{\setlength\itemindent{0.00in}% 
+                 \setlength\listparindent{0.45in}%
+                 \setlength\leftmargin{0.30in}%
+                 \setlength\rightmargin{0.20in}%
+                 \setlength\labelsep{0.10in}%
+                 \setlength\labelwidth{1.5in}%
+                 \setlength\itemsep{-2.0pt}%
+	       \setlength\parsep{2pt}%
+  }}{\end{list}%
+\end{mdframed}}

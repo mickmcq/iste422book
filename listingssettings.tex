@@ -1,0 +1,108 @@
+% lists
+\usepackage{multicol}
+%listings
+\usepackage{listings}
+%\lstdefinelanguage{html}{%
+%   morekeywords={a,href,tag,attribute}%
+%}
+\input{listings-lstlang4.tex}
+\lstdefinelanguage{JavaScript}{ keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, forEach, function, if, in, instanceof, listen, new, run, require, return, send, set, switch, then, this, throw, try, typeof, use, var, void, while, with},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
+\lstdefinelanguage{Cypher} {
+  alsoletter={<, :, >, /},
+  morekeywords={SET, IN, WITH, MATCH, MERGE, DETACH, WHERE, RETURN, CREATE, DELETE,
+                set, in, with, match, merge, detach, where, return, create, delete},
+  morestring=[b]"
+}
+\lstdefinelanguage{email}{%
+  morekeywords={Delivered,
+  To,
+  Received,
+  Authentication,
+  Results,
+  X,
+  VirtualServer,
+  VirtualServerGroup,
+  Return,
+  Path}%
+}
+\lstdefinelanguage{generic}{%
+  classoffset=0,
+  morekeywords={%
+    pdf,
+    en3%
+  },
+  keywordstyle=\color{commentcolor},
+  classoffset=1,
+  morekeywords={%
+    en3%
+  },
+  keywordstyle=\color{keywordcolor}
+}
+\lstdefinelanguage{ifconfig}{%
+  classoffset=0,
+  morekeywords={%
+    p2p0,
+    en3%
+  },
+  keywordstyle=\color{commentcolor},
+  classoffset=1,
+  morekeywords={%
+    broadcast,
+    ether,
+    flags,
+    inet,
+    inet6,
+    media,
+    nd6,
+    netmask,
+    options,
+    status%
+  },
+  keywordstyle=\color{keywordcolor}
+}
+\lstdefinestyle{python}{language=Python,basicstyle=\ttfamily\normalsize,columns=fixed}
+\lstdefinestyle{cypher}{%
+  language=Cypher,
+  basicstyle=\ttfamily\small,
+  columns=fixed
+}
+\lstdefinestyle{perl}{%
+  language=Perl,
+  basicstyle=\ttfamily\small,
+  columns=fixed
+}
+\lstdefinestyle{scriptxml}{language=xml,basicstyle=\ttfamily\scriptsize,columns=fixed}
+\lstdefinestyle{footxml}{language=xml,basicstyle=\ttfamily\footnotesize,columns=fixed}
+\lstdefinestyle{smallxml}{language=xml,basicstyle=\ttfamily\small,columns=fixed}
+\lstdefinestyle{mailheaders}{language=email,basicstyle=\ttfamily\tiny,columns=fixed}
+\lstdefinestyle{netconfig}{%
+  language=ifconfig,
+  basicstyle=\ttfamily\scriptsize,
+  columns=fixed%
+}
+\usepackage{textcomp}
+\usepackage{upquote}
+\lstset{%
+   language=SQL,
+   %language=html,
+   %literate={"}{\textquotedbl}1,
+   basicstyle=\ttfamily\small,
+   upquote=true,
+   columns=fixed,
+   keywordstyle=\bfseries\color{keywordcolor},
+   identifierstyle=\color{idcolor},
+   stringstyle=\color{stringcolor}, 
+   commentstyle=\color{commentcolor},  
+   breaklines=true,
+   breakatwhitespace=true,
+   tabsize=10,
+   emph={tag,attribute},
+   emphstyle=\color{emphcolor},
+   showstringspaces=false%
+}
