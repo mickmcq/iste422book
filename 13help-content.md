@@ -79,4 +79,4 @@ You need to be skilled at identifying tools with healthy communities and prospec
 You will soon see that *Adobe RoboHelp* and *Madcap Flare* are market leaders, although with licenses costing in the neighborhood of 2,000USD, there must be alternatives. Further analysis will show that most of those with Native Windows versions have license fees in the neighborhood of 200USD. For your project in this course, you may want to try out an alternative that stores your files in the cloud. Some of these allow you one project with limited pages for free. Check out
 [https://clickhelp.co](https://clickhelp.co) and
 [https://proprofs.com](https://proprofs.com).
-
+[https://readthedocs.io](https://readthedocs.io) is also a very popular site for online documentation for opensource projects.

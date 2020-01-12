@@ -45,3 +45,6 @@ is used to embed advertisements in Wordpress templates among other things.
 
 [https://esolangs.org/wiki/Velato](https://esolangs.org/wiki/Velato)
 documents a programming language using MIDI files as source code. This page links to an mp3 of helloworld as an "easy-listening" jazz piano composition.
+
+There are also “esoteric languages” which are deliberately obtuse, academic, or curiosities. The most famous one is Brainf\*\*k [https://en.wikipedia.org/wiki/Brainf**k](https://en.wikipedia.org/wiki/Brainf**k) that uses only the 8 characters “+ - < > . , \[ \]".
+Similar to Velato is Piet (named after the artist Piet Mondrian), that uses images as code: [http://www.dangermouse.net/esoteric/piet.html](http://www.dangermouse.net/esoteric/piet.html).
