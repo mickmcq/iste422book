@@ -95,13 +95,14 @@ The above Makefile contains four definitions. You can look through the Makefile 
 ### Other aspects of this Makefile
 It is not important for you to understand the the commands given in the Makefile but a few more features may be of interest. These are all based on the fact that the `command` portion of the Makefile is run through a shell, so everything in the `command` must be compatible with whatever shell you use. I use `bash` almost exclusively, so there are a few features of `bash` in this Makefile.
 
-The symbol `||` means *or* to `bash` so whenever I say
+The symbol `||` means *execute if false* to `bash` so whenever I say
 
 ```bash
 command || command
 ```
 
-\noindent `bash` interprets this to mean to run the first command and then to run the second command whether the first command returns a successful exit code or not.
+\noindent `bash` interprets this to mean to run the first command and then to run the second command only if the first command returns an error (non-zero) exit code.
+Make will terminate a build if there is an error in a command line.  We use `||` in the Makefile so that an error in the first command does not end the build, as LaTeX will sometimes return errors even when enough is processed for our purposes.
 
 The symbol `&&` means *and* to `bash` so whenever I say
 
@@ -185,6 +186,8 @@ fum	fumCount++;
 ```
 
 There are many tabs in the above file. You will get error messages if you do not type the file in exactly as written. The first four lines each have exactly one tab character before `int`. The incrementing lines (fee, fie, foe, and fum) have exactly one tab character between the words `fee`, `fie`, `foe`, and `fum`, and the incrementing variable, e.g., `feeCount++`.
+
+Note that you can display tab characters in Vim with `:set list`, this will show other non-printable characters too. To stop displaying these characters type `:set nolist`. Some other solutions can be found at [https://vi.stackexchange.com/q/422](https://vi.stackexchange.com/q/422). Grep can also be used to find lines that start with spaces: `grep '^ +' MyFile`, which can be stated as "display all lines which start with one or more space charaacters in the file named MyFile".
 
 Finally, write the Makefile, establishing the relationships between these files and the other, intermediate files, that will be created in the process of making the `countWords` program. Type the following into a file called `Makefile`. Notice that you are typing in five rules, each with a target, zero or one or two prerequisites, and each with one command.
 
