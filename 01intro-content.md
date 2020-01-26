@@ -21,7 +21,7 @@
 
 \vskip12pt
 
-\textsc{fall 2019}
+\textsc{spring 2020}
 
 \vskip148pt
 
@@ -84,6 +84,9 @@ or\linebreak
 
 \tableofcontents
 
+# Acknowledgements
+
+Thanks to Ed Griebel for valuable contributions and corrections.
 
 # Introduction
 
