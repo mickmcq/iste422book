@@ -1,4 +1,5 @@
 \documentclass[12pt]{article}
+\usepackage[breaklinks=true,colorlinks=true,urlcolor=linklabelcolor,linkcolor=linklabelcolor,bookmarks=true]{hyperref}
 
 %                                 titles, sections, toc,
 %                                 geometry
@@ -61,5 +62,11 @@
 \renewcommand{\includegraphics}[2][]{\OldIncludegraphics[%
   height=6cm,%
   #1]{#2}}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{cslreferences}%
+  {\setlength{\parindent}{0pt}%
+  \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+  {\par}
 \input{\jobname.tex}
 \end{document}
