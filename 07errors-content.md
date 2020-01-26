@@ -26,6 +26,8 @@ You may pass on exceptions to another layer or module of code.
 # Logging
 You can classify logging as either infrastructure logging or application logging. We'll consider application logging here but you should be aware that all system service log events and these logs offer a lot of value for diagnosing problems of all kinds, including security, performance, network communication, and abnormal program termination. In Unix-like systems, these infrastructure logs are saved in `/var/log` and are all human-readable. In enterprise systems, it is common for systems to not only record events locally but also to `tee` logged events to a central server that has restricted access except to append to logs. This practice is meant to enhance security.
 
+In addition to a centralized syslogd server, enterprises also use specialized software for centralized logging and analysis. For an example of a popular package see [https://www.splunk.com/](https://www.splunk.com/).  [https://logz.io/](https://logz.io/) and [https://www.sumologic.com/](https://www.sumologic.com/) are popular alternatives. These provide enhanced searching of history and sophisticated query criteria. Some also have sophisticated reporting, analytics, and dashboarding.
+
 ## Application logging
 Application logging includes any messages the developer wants to record. These can be sent to `stdout` or to a specific log file for the application or, in some cases, to a central log file (see Application logging in Linux below).
 

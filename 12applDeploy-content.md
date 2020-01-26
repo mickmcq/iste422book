@@ -104,6 +104,7 @@ Holman advocates the following three principles for code review in *any* organiz
 - Someone needs to review
 
 Smaller branches are more likely to receive scrutiny. Large branches are too intimidating for many people. People are happy to criticize 6 lines, hesitant about 60 lines, and unavailable to review 600 lines.
+This tendency is illustrated in "Parkinsons Law of Triviality" also known as "Bike Shedding" [https://en.wikipedia.com/wiki/Law_of_Triviality](https://en.wikipedia.com/wiki/Law_of_Triviality), which states that it is human nature that trivial problems or changes get more attention than larger and more imporant ones. The article goes into reasons why this occurs.
 
 ## Branch deployment
 Holman estimates that a team of ten could deploy 7--15 branches each day, assuming a small branch size. He recommends deploying each branch *before* merging. This way, if something goes wrong, the master branch can always be redeployed. Only when the new branch appears to be successful should it be merged into the master branch. Therefore, the deployment tooling must allow you to deploy a branch to production before merging.

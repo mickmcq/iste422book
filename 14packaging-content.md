@@ -171,7 +171,7 @@ Packaging creates a new namespace so no name conflicts with names in other packa
 ### Package creation
 To create a package, choose a name for the package.
  Put a `package` statement with that name at the top of every source file that you want to include in that package.
-The `package` statement should be the first line in the file. 
+The `package` statement should be the first line of code in the file, comments can occur before the statement.
 Use lowercase names for your packages to avoid conflicts with the names of classes or interfaces.
 There can be only one `package` statement in each source file, and it applies to all types in the file. 
 If you don’t include a `package` statement, all types will be put into an unnamed package.
@@ -218,6 +218,17 @@ package myaccountingprogram.payroll;
 /myaccountingprogram/payroll/Employee.class
 ```
 \noindent These locations need to be added to the classpath.
+All of these paths are relative, not an absolute directory. As an example for our project, the EdgeConvertGUI.java could have a package declaration of
+
+```java
+package com.edgriebel.rit422.gui;
+```
+\noindent and the files could be located in
+
+```
+/home/eegics/projects/422/examples/src/com/edgriebel/rit422/gui/EdgeConvertGUI.java
+/home/eegics/projects/422/examples/build/com/edgriebel/rit422/gui/EdgeConvertGUI.class
+```
 
 ### Jar file definition
 A Jar file is a way to place multiple files in one archive.
@@ -278,7 +289,7 @@ java -cp EdgeConvert.jar RunEdgeConvert
 java -jar EdgeConvert.jar
 ```
 
-If you want to double-click the Jar file in a graphical file explorer, you have to rely on a utility to look in the manifest and identify that `RunEdgeConvert` is the main class. On Mac OS X and Windows, such utilities are built into the Finder and Explorer, respectively. On Linux you would need to add such a utility via a package installer.
+If you want to double-click the Jar file in a graphical file explorer, you have to rely on a utility to look in the manifest and identify that `RunEdgeConvert` is the main class. On Mac OS X and Windows, such utilities are built into the Finder and Explorer, respectively. On Linux you could add such a utility via a package installer, however there is a built in command `unzip` that can be used from the command line to list or view the contents.
 
 ### Package sealing
 The manifest can provide notification of package sealing, meaning that all classes defined in the package are archived in the Jar file. This can provide version consistency or security. This involves a name-value pair in the manifest saying `Sealed: true` This line must follow a line establishing the package name and ensures that Java will only use classes from this Jar file whenever a program requires classes with this package name.
