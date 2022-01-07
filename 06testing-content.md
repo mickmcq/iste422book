@@ -257,7 +257,7 @@ public class TestMessageUtil {
 
 Now you can change to the directory containing the `build.xml` file and say `ant`. The output should conclude with something like the following.
 
-```
+```bash
 test:
     [junit] Testsuite: TestMessageUtil
     [junit] Tests run: 2, Failures: 0, Errors: 0,

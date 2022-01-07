@@ -84,7 +84,7 @@ The *command* has to be some command that can be run by the shell. In the above 
 
 In addition to rules, a Makefile can have other things, including definitions. The beginning of the above Makefile is a series of definitions. These are pieces of text that might be reused and might change from time to time, so that it is more convenient to rewrite it in one location rather than searching and replacing throughout the Makefile. The definitions are automatically replaced when you use the construct `$(name)`. For example, when you say `$(rerun)` in the above Makefile, it is replaced by the text
 
-```
+```bash
 Rerun to get cross-references right
 ```
 
@@ -385,7 +385,7 @@ lexer.o : lexer.h
 
 \noindent Now the entire directory structure should look like this.
 
-```
+```bash
 cw3/
   include/
     counter.h
@@ -584,7 +584,7 @@ task helloWorld
 
 Now you can run gradle but you won't see any results beyond the following.
 
-```
+```bash
 Starting a Gradle Daemon (subsequent builds will be faster)
 > Task :help
 Welcome to Gradle 4.3.1.

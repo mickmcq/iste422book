@@ -1,0 +1,187 @@
+%\usepackage{pgf-umlcd}
+% above wreaks havoc with lualatex but not xelatex
+\usepackage{tikz}
+\usetikzlibrary{automata}
+\usetikzlibrary{arrows}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{fit}
+\usetikzlibrary{graphs}
+\usetikzlibrary{shapes.geometric}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfdeclarelayer{connectionlayers}
+\pgfsetlayers{background,edgelayer,nodelayer,connectionlayers,main}
+    \tikzstyle{surround} = [
+      fill=none,
+      thick,
+      draw=none,
+      rounded corners=2mm
+    ]
+    \tikzstyle{entity} = [
+      align=center,
+      fill=entitycolor,
+      anchor=base,
+      text=white,
+      shape=rectangle,
+      opacity=0.95,
+      draw=none,
+      minimum size=3pt,
+      inner sep=3pt,
+      font=\sffamily\slshape\small
+    ]
+    \tikzstyle{process} = [
+      align=center,
+      fill=processcolor,
+      anchor=base,
+      text=white,
+      shape=ellipse,
+      minimum size=3pt,
+      opacity=0.95,
+      inner sep=2pt,
+      font=\sffamily\small\slshape
+    ]
+    \tikzstyle{chenattr} = [
+      align=center,
+      draw=chenattrcolor,
+      fill=chenattrfill,
+      thick,
+      anchor=base,
+      text=chenattrcolor,
+      shape=ellipse,
+      minimum size=3pt,
+      opacity=0.95,
+      inner sep=2pt,
+      font=\ttfamily\small
+    ]
+    \tikzstyle{chentinyattr} = [
+      align=center,
+      draw=chenattrcolor,
+      fill=chentinyattrfill,
+      thick,
+      anchor=base,
+      text=chenattrcolor,
+      shape=ellipse,
+      minimum size=3pt,
+      opacity=0.95,
+      inner sep=2pt,
+      font=\ttfamily\footnotesize
+    ]
+    \tikzstyle{chenmultiattr} = [
+      align=center,
+      draw=chenattrcolor,
+      thick,
+      double,
+      anchor=base,
+      text=chenattrcolor,
+      shape=ellipse,
+      minimum size=3pt,
+      opacity=0.95,
+      inner sep=2pt,
+      font=\ttfamily\small
+    ]
+    \tikzstyle{chenderivattr} = [
+      align=center,
+      draw=chenattrcolor,
+      thick,
+      dashed,
+      anchor=base,
+      text=chenattrcolor,
+      shape=ellipse,
+      minimum size=3pt,
+      opacity=0.95,
+      inner sep=2pt,
+      font=\ttfamily\small
+    ]
+    \tikzstyle{relat} = [
+      align=center,
+      thick,
+      opacity=0.9,
+      draw=chenattrcolor
+    ]
+    \tikzstyle{relattext} = [
+      sloped,
+      text=chenattrcolor,
+      align=center,
+      opacity=0.95,
+      above=0.0pt,
+      font=\ttfamily\small
+    ]
+    \tikzstyle{cstep} = [
+      fill=cstepcolor,
+      anchor=base,
+      text=white,
+      align=center,
+      shape=ellipse,
+      minimum size=5pt,
+      opacity=0.95,
+      inner sep=2pt,
+      font=\sffamily\scriptsize\itshape
+    ]
+    \tikzstyle{flow} = [
+      align=center,
+      very thick,
+      opacity=0.9,
+      draw=flowcolor
+    ]
+    \tikzstyle{flowtext} = [
+      sloped,
+      text=flowcolor,
+      align=center,
+      opacity=0.95,
+      above=0.0pt,
+      font=\sffamily\footnotesize\slshape
+    ]
+    \tikzstyle{boundaryline} = [
+      dashed,
+      align=center,
+      very thick,
+      opacity=0.9,
+      draw=boundarycolor
+    ]
+    \tikzstyle{inviso} = [
+      transparent
+    ]
+
+
+% Define a `datastore' shape for use in DFDs.
+% This inherits from a rectangle and only draws two
+% horizontal lines.
+\makeatletter
+\pgfdeclareshape{datastore}{
+  \inheritsavedanchors[from=rectangle]
+  \inheritanchorborder[from=rectangle]
+  \inheritanchor[from=rectangle]{center}
+  \inheritanchor[from=rectangle]{base}
+  \inheritanchor[from=rectangle]{north}
+  \inheritanchor[from=rectangle]{north east}
+  \inheritanchor[from=rectangle]{east}
+  \inheritanchor[from=rectangle]{south east}
+  \inheritanchor[from=rectangle]{south}
+  \inheritanchor[from=rectangle]{south west}
+  \inheritanchor[from=rectangle]{west}
+  \inheritanchor[from=rectangle]{north west}
+  \backgroundpath{
+    %  store lower right in xa/ya and upper right in xb/yb
+    \southwest \pgf@xa=\pgf@x \pgf@ya=\pgf@y
+    \northeast \pgf@xb=\pgf@x \pgf@yb=\pgf@y
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@ya}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@ya}}
+    \pgfpathmoveto{\pgfpoint{\pgf@xa}{\pgf@yb}}
+    \pgfpathlineto{\pgfpoint{\pgf@xb}{\pgf@yb}}
+ }
+}
+\makeatother
+\usepackage{weiwBTree}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+
+
+\newcommand{\tikzmark}[2]{
+    \tikz[overlay,remember picture,baseline]
+    \node[anchor=base] (#1) {$#2$};
+}
+
+

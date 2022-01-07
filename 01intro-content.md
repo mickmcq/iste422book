@@ -21,7 +21,7 @@
 
 \vskip12pt
 
-\textsc{spring 2020}
+\textsc{spring 2022}
 
 \vskip148pt
 
@@ -59,7 +59,7 @@
 
   \medskip
 
-  This document was produced by \XeLaTeX,\linebreak
+  This document was produced by \LuaLaTeX,\linebreak
   using the \textit{fbb} font package.
 
   \medskip

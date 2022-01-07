@@ -63,7 +63,7 @@ wc tmp01 tmp02 tmp03
 
 The output of the above is
 
-```
+```bash
   10002   45897 1612898 tmp01
    5006   22983  850410 tmp02
    4996   22914  762488 tmp03
@@ -144,7 +144,7 @@ cp -p tmp10 20150425.csv
 
 That instruction seemed weird to me. All rows had the same creation date listed. One alternative might be to create a file corresponding to each creation date. Here is an old Perl script I wrote to create a file for each row number in a file with a format like
 
-```
+```bash
 ...
 405	bla de bla
 406	more of this
@@ -439,7 +439,7 @@ java -cp bla.jar MainTester -f testobjectfile.txt
 
 where testobjectfile.txt is a file containing lines like
 
-```
+```bash
 1,2,3,teststyle1,teststyle2
 ...
 ```
@@ -521,21 +521,21 @@ assuming I have entered it into a file called stmts.sql. It will run silently.
 
 Next, I can run `mysqlcheck -u myusername -p -c blah` and I should get the following output.
 
-```
+```bash
 blah.foo                      OK
 ```
 
 \noindent
 You should be able to test for that output using jUnit or a similar test framework. How do you know that the table should be named `foo`? You can look in the Courses.edg file to understand that. When you see a section of the file marked
 
-```
+```bash
 ## Figures & Connectors Section:
 ```
 
 \noindent
 you know that what follows are the descriptions of entities that will be turned into tables. That section begins with the following information:
 
-```
+```bash
 Figure 1
 {
   Style "Entity"
@@ -545,7 +545,7 @@ Figure 1
 \noindent
 so you know that there will be a table called `STUDENT`. If you search for strings that look like this, you will soon find
 
-```
+```bash
 Figure 2
 {
   Style "Entity"
@@ -557,7 +557,7 @@ so now you know that there will be a table called `FACULTY`. You should be able 
 
 If your create statements fail to create a database at all, the above `mysqlcheck` command should return something like the following.
 
-```
+```bash
 mysqlcheck: Got error: 1049: Unknown database 'blah'
 when selecting the database
 ```
@@ -565,14 +565,14 @@ when selecting the database
 Suppose on the other hand that your program produces no file. Can you test that? If you took ISTE120 or ISTE121 you should be able to test for the existence of a file in Java. 
 Suppose on the other hand that your program produces a file containing
 
-```
+```bash
 create
 ```
 
 \noindent
 and nothing else. When I try to run that through mysql, it returns
 
-```
+```bash
 ERROR 1064 (42000) at line 1: You have an error in your
 SQL syntax; check the manual that corresponds to your
 MySQL server version for the right syntax to use
@@ -612,7 +612,7 @@ java -cp .:junit-4.12.jar:hamcrest-core-1.3.jar \
 \noindent
 for which you should see output like the following:
 
-```
+```bash
 JUnit version 4.12
 .............
 Time: 0.007
@@ -623,7 +623,7 @@ OK (13 tests)
 You can play around with `EdgeConnectorTest.java` to make it fail some tests.
 Your task (in addition to the above) is to test four more classes. You will have to create four files, such as
 
-```
+```bash
 CreateDDLMySQLTest.java
 EdgeConvertCreateDDLTest.java
 EdgeConvertFileParserTest.java

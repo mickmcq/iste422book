@@ -225,7 +225,7 @@ package com.edgriebel.rit422.gui;
 ```
 \noindent and the files could be located in
 
-```
+```bash
 /home/eegics/projects/422/examples/src/com/edgriebel/rit422/gui/EdgeConvertGUI.java
 /home/eegics/projects/422/examples/build/com/edgriebel/rit422/gui/EdgeConvertGUI.class
 ```

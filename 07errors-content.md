@@ -95,7 +95,7 @@ java -cp .:slf4j-api-1.7.18.jar:slf4j-simple-1.7.18.jar \
 ```
 This led to the expected output
 
-```
+```bash
 [main] INFO HelloWorld - Hello World
 ```
 
@@ -134,7 +134,7 @@ public class Wombat {
 
 Running this program similarly to `HelloWorld` gave me the following expected results.
 
-```
+```bash
 [main] INFO Wombat - Temperature set to 100.
                      Old temperature was null.
 [main] INFO Wombat - Temperature has risen above 50 degrees.

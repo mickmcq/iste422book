@@ -1,6 +1,6 @@
 rerun    = "Rerun to get cross-references right"
 basename = book
-latex    = xelatex
+latex    = lualatex
 option   = -jobname $(basename) '\input{preamble-basic.tex}'
 texdir   = '/usr/local/texlive/texmf-local/tex/'
 pandir   = ~/.pandoc/templates/

@@ -1329,8 +1329,8 @@ A UML class diagram is a bunch of boxes representing classes connected by lines 
 \begin{center}
 \begin{tikzpicture}[scale=0.8,every node/.style={scale=0.8}]
   \begin{class}[text width =8 cm]{ClassName}{0 ,0}
-    \attribute{name : attribute type}
-    \attribute{name : attribute type = default value}
+    \uattribute{name : attribute type}
+    \uattribute{name : attribute type = default value}
     \operation{name ( parameter list ) : type of value returned}
     % virtual operation
     \operation[0]{name ( parameters list ) : type of value returned}
@@ -1352,8 +1352,8 @@ Here is an example of their usage. Note that *protected* means that the method i
 \begin{center}
  \begin{tikzpicture}[scale=0.8,every node/.style={scale=0.8}]
    \begin{class}[text width=7cm]{BankAccount}{0,-3}
-     \attribute{+ owner : String}
-     \attribute{+ balance : Dollars}
+     \uattribute{+ owner : String}
+     \uattribute{+ balance : Dollars}
      \operation{+ deposit( amount : Dollars )}
      \operation{+ withdrawal( amount : Dollars )}
      \operation{\# updateBalance( newBalance : Dollars)}
@@ -1366,8 +1366,8 @@ You may indicate an abstract class in one of several ways. You can use double an
 \begin{center}
  \begin{tikzpicture}[scale=0.8,every node/.style={scale=0.8}]
    \begin{abstractclass}[text width=5cm]{BankAccount }{0 ,0}
-    \attribute{owner : String}
-    \attribute{balance : Dollars = 0}
+    \uattribute{owner : String}
+    \uattribute{balance : Dollars = 0}
     \operation{deposit(amount : Dollars)}
     \operation[0]{withdrawal(amount : Dollars)}
    \end{abstractclass}
@@ -1379,8 +1379,8 @@ The same is true of interfaces.
 \begin{center}
  \begin{tikzpicture}[scale=0.8,every node/.style={scale=0.8}]
    \begin{interface}{Person}{0,0}
-    \attribute{firstName : String}
-    \attribute{lastName : String}
+    \uattribute{firstName : String}
+    \uattribute{lastName : String}
    \end{interface}
  \end{tikzpicture}
 \end{center}
@@ -1393,20 +1393,20 @@ Inheritance is shown by an open triangle next to the parent or superclass in the
 \begin{center}
   \begin{tikzpicture}[scale=0.6,every node/.style={scale=0.6}]
   \begin{class}[text width=5cm]{BankAccount}{0,0}
-    \attribute{owner : String}
-    \attribute{balance : Dollars = 0}
+    \uattribute{owner : String}
+    \uattribute{balance : Dollars = 0}
     \operation{deposit(amount : Dollars)}
     \operation[0]{withdrawal(amount : Dollars)}
   \end{class}
   \begin{class}[text width=7cm]{CheckingAccount }{-5,-5}
     \inherit{BankAccount}
-    \attribute{insufficientFundsFee : Dollars}
+    \uattribute{insufficientFundsFee : Dollars}
     \operation{processCheck ( checkToProcess : Check )}
     \operation{withdrawal ( amount : Dollars )}
   \end{class}
   \begin{class}[text width=7cm]{SavingsAccount}{5,-5}
     \inherit{BankAccount}
-    \attribute{annualInteresRate : Percentage}
+    \uattribute{annualInteresRate : Percentage}
     \operation{depositMonthlyInterest ( )}
     \operation{withdrawal ( amount : Dollars )}
   \end{class}
@@ -1418,16 +1418,16 @@ Interface implementation can be shown the same way except that you use a dashed 
 \begin{center}
   \begin{tikzpicture}[scale=0.6,every node/.style={scale=0.6}]
   \begin{interface}{Person}{0,0}
-    \attribute{firstName : String}
-    \attribute{lastName : String} 
+    \uattribute{firstName : String}
+    \uattribute{lastName : String} 
   \end{interface}
   \begin{class}{Professor}{-5,-5}
     \implement{Person} 
-    \attribute{salary : Dollars}
+    \uattribute{salary : Dollars}
   \end{class}
   \begin{class}{Student}{5,-5}
     \implement{Person}
-    \attribute{major : String}
+    \uattribute{major : String}
   \end{class}
   \end{tikzpicture}
 \end{center}
@@ -1437,19 +1437,19 @@ Associations can be unidirectional or bidirectional and have cardinality. Here i
 \begin{center}
   \begin{tikzpicture}[scale=0.6,every node/.style={scale=0.6}]
   \begin{class}[text width=7cm]{Flight}{0,0}
-    \attribute{flightNumber : Integer}
-    \attribute{departureTime : Date}
-    \attribute{flightDuration : Minutes}
-    \attribute{departingAirport : String}
-    \attribute{arrivingAirport : String}
+    \uattribute{flightNumber : Integer}
+    \uattribute{departureTime : Date}
+    \uattribute{flightDuration : Minutes}
+    \uattribute{departingAirport : String}
+    \uattribute{arrivingAirport : String}
     \operation{delayFlight ( numberOfMinutes : Minutes )}
     \operation{getArrivalTime ( ) : Date}
   \end{class}
   \begin{class}{Plane}{11,0}
-    \attribute{airPlaneType : String}
-    \attribute{maximumSpeed : MPH}
-    \attribute{maximumDistance : Miles}
-    \attribute{tailID : String}
+    \uattribute{airPlaneType : String}
+    \uattribute{maximumSpeed : MPH}
+    \uattribute{maximumDistance : Miles}
+    \uattribute{tailID : String}
   \end{class}
   \association{Plane}{assignedPlane}{0..1}{Flight}{0..*}{assignedFlights}
   \end{tikzpicture}
@@ -1460,12 +1460,12 @@ Unidirectional relationships need an arrow (not an open triangle) at one end.
 \begin{center}
   \begin{tikzpicture}[scale=0.6,every node/.style={scale=0.6}]
   \begin{class}[text width=6cm]{OverdrawnAccountsReport}{0,0}
-    \attribute{generatedOn : Date}
+    \uattribute{generatedOn : Date}
     \operation{refresh ( )}
   \end{class}
   \begin{class}{BankAccount}{12,0}
-    \attribute{owner : String}
-    \attribute{balance : Dollars}
+    \uattribute{owner : String}
+    \uattribute{balance : Dollars}
     \operation{deposit(amount : Dollars)}
     \operation[0]{withdrawal(amount : Dollars)}
   \end{class}
@@ -1503,20 +1503,20 @@ If you package some classes, you can portray that in a class diagram by enclosin
   \begin{tikzpicture}[scale=0.6,every node/.style={scale=0.6}]
   \begin{package}{Accounts}
   \begin{class}[text width=5cm]{BankAccount}{0,0}
-    \attribute{owner : String}
-    \attribute{balance : Dollars = 0}
+    \uattribute{owner : String}
+    \uattribute{balance : Dollars = 0}
     \operation{deposit(amount : Dollars)}
     \operation[0]{withdrawal(amount : Dollars)}
   \end{class}
   \begin{class}[text width=7cm]{CheckingAccount }{-5,-5}
     \inherit{BankAccount}
-    \attribute{insufficientFundsFee : Dollars}
+    \uattribute{insufficientFundsFee : Dollars}
     \operation{processCheck ( checkToProcess : Check )}
     \operation{withdrawal ( amount : Dollars )}
   \end{class}
   \begin{class}[text width=7cm]{SavingsAccount }{5 , -5}
     \inherit{BankAccount}
-    \attribute{annualInteresRate : Percentage}
+    \uattribute{annualInteresRate : Percentage}
     \operation{depositMonthlyInterest ( )}
     \operation{withdrawal ( amount : Dollars )}
   \end{class}

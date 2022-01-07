@@ -128,7 +128,7 @@ git push -u origin master
 
 This should give you output like the following.
 
-```
+```bash
 Enumerating objects: 3, done.
 Counting objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.

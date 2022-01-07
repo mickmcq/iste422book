@@ -60,3 +60,43 @@
 	       \setlength\parsep{2pt}%
   }}{\end{list}%
 \end{mdframed}}
+
+%                                 pic command
+\newcommand{\pic}[3][height=3in,width=5in]{
+  \begin{figure}[hbtp]
+    \begin{center}
+      \begin{shaded}
+      \includegraphics[#1]{#2}
+      \end{shaded}
+      \caption{#3}%
+      \label{#2}
+    \end{center}
+  \end{figure}
+}
+%                                 pix environment
+\newenvironment{pix}[2]{%
+  \begin{figure}[hbtp]
+  \def\mycaption{\caption{#1}}%
+  \def\mylabel{\label{#2}}%
+  \begin{shaded}
+}{%
+  \end{shaded}
+  \mycaption%
+  \mylabel%
+  \end{figure}
+}
+%                                 blistfigure environment
+\newenvironment{blistfigure}[2]{%
+  \begin{figure}[hbtp]
+  \def\mycaption{\caption{#1}}%
+  \def\mylabel{\label{#2}}%
+  \begin{shaded}
+  \begin{btopiclist}
+}{%
+  \end{btopiclist}
+  \end{shaded}
+  \mycaption%
+  \mylabel%
+  \end{figure}
+}
+
